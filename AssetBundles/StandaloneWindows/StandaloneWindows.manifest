@@ -1,0 +1,13 @@
+ManifestFileVersion: 0
+CRC: 417429535
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: ui/bag.assetbundle
+      Dependencies: {}
+    Info_1:
+      Name: ui/solt.assetbundle
+      Dependencies: {}
+    Info_2:
+      Name: cube.assetbundle
+      Dependencies: {}

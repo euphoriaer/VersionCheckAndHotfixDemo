@@ -1,0 +1,42 @@
+ManifestFileVersion: 0
+CRC: 101578274
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 315c026492f2103b8aab2577c34fa07e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 66cb5992458e8bbb8ae70b411c79530d
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6745e18c740dba34f8a2b6ea3677b535, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Prefabs/BagTitle.prefab
+- Assets/Prefabs/Bag.prefab
+Dependencies: []

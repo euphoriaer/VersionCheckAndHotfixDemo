@@ -1,0 +1,9 @@
+AssetBundles\StandaloneWindows\cube.assetbundle ca725da0eaa5ecd449d49d7954047a18 36
+AssetBundles\StandaloneWindows\cube.assetbundle.manifest e1c13294bc709cdfb362ccb49ee39e58 1
+AssetBundles\StandaloneWindows\StandaloneWindows.assetbundle 0e086edfa8cbdf762775e286b145ed98 2
+AssetBundles\StandaloneWindows\StandaloneWindows.manifest 5a7d49c4bc25c0c898b4606e403146bd 1
+AssetBundles\StandaloneWindows\ui\bag.assetbundle 7a9471f1a0a9d08fb6f63e948d221d8e 133
+AssetBundles\StandaloneWindows\ui\bag.assetbundle.manifest 86fbf32269d173c5daffd801bf406be1 2
+AssetBundles\StandaloneWindows\ui\solt.assetbundle 6a45bdd4dfe3ac6289fd890d99572151 121
+AssetBundles\StandaloneWindows\ui\solt.assetbundle.manifest 91d075a6288197ef4bfe878b1ece9bcb 2
+

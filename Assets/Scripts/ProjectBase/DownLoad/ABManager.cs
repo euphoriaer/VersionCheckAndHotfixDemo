@@ -6,7 +6,7 @@ using UnityEngine.Events;
 /// <summary>
 /// AB管理器： 用法： 1.加载AB主包，设置主包所在目录（作为其余AB包加载路径），2.然后根据AB包名加载需要的包，3.加载对应的资源名。因为AssetBundle打包主包不含后缀，无法下载，需手动更改后缀
 /// </summary>
-public  class ABManager : SingletnoAutoMono<ABManager>
+public class ABManager : SingletnoAutoMono<ABManager>
 {
     //AB包管理器 目的是 让外部更方便的进行资源加载
     //主包
@@ -74,7 +74,6 @@ public  class ABManager : SingletnoAutoMono<ABManager>
         //如果没有加载过 加载
         if (!abDic.ContainsKey(abName))
         {
-
             ab = AssetBundle.LoadFromFile(pathUrl + abName);
             abDic.Add(abName, ab);
         }

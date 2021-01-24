@@ -1,0 +1,3 @@
+print("Hello lua")
+require "activity"
+require "bag"

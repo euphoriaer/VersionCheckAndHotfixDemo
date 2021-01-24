@@ -11,6 +11,7 @@ using UnityEngine.Events;
 /// </summary>
 public class ABUIManager : SingletnoAutoMono<ABUIManager>
 {
+    
     //里式转换原则，用基类装子类
     public Dictionary<string, GameObject> panelDic = new Dictionary<string, GameObject>();
 
@@ -20,6 +21,11 @@ public class ABUIManager : SingletnoAutoMono<ABUIManager>
     private Transform Mid;
     private Transform Top;
     private Transform System;
+
+    private void Awake()
+    {
+        init();
+    }
     private void Start()
     {
        
@@ -44,7 +50,7 @@ public class ABUIManager : SingletnoAutoMono<ABUIManager>
         GameObject.DontDestroyOnLoad(obj);
     }
     /// <summary>
-    /// 显示面板
+    /// 创建面板
     /// </summary>
     /// <typeparam name="T">面板类型</typeparam>
     /// <param name="ABname">AB包名</param>
@@ -53,7 +59,7 @@ public class ABUIManager : SingletnoAutoMono<ABUIManager>
     /// <param name="callback">回调函数对实例化的物体操作</param>
     public void ShowPanel<T>(string ABname,string panelName, E_UI_Layer layer, UnityAction<GameObject> callback) where T : BasePanel
     {
-        init();
+        
         ABManager.Instance.LoadResAsync<GameObject>(ABname, panelName,(obj) =>
         {
             if (panelDic.ContainsKey(panelName))
@@ -108,7 +114,7 @@ public class ABUIManager : SingletnoAutoMono<ABUIManager>
 
 
     /// <summary>
-    /// 隐藏面板
+    /// 删除面板
     /// </summary>
     /// <param name="panelName"></param>
     public void HidePanel(string panelName)

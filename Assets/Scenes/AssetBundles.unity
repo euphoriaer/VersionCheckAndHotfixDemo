@@ -367,3 +367,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0d0f28c71897d74a84ef92b7e8e46f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyBag: 98

@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Events;
-
 
 //todo 应该检测本地 资源生成一个文件，然后根据本地资源和服务器对比更新版本（可能出现本地资源缺失，但是版本文件没有更改的情况，所以做资源检查，或者当玩家无法进入游戏，进行资源检查button 逆水寒例子）
 //todo 应该检测本地，同时删除过时的文件
@@ -29,11 +27,11 @@ public class DownLoadMgr : BaseManager<DownLoadMgr>
     /// 输入版本文件所在服务器地址（地址复制到网页可直接下载）
     /// </summary>
     /// <param name="versionPathURL">输入版本文件所在服务器地址（地址复制到网页可直接下载）</param>
-    public void InitCheckVersion(string versionPathURL,UnityAction finishCheck)
+    public void InitCheckVersion(string versionPathURL, UnityAction finishCheck)
     {
-//条件编译，根据不同平台下载不同的版本文件
+        //条件编译，根据不同平台下载不同的版本文件
 #if UNITY_EDITOR || UNITY_STANDLONE_WIN
-     DownLoadUrl = DownLoadBaseUrl + "StandaloneWindows";
+        DownLoadUrl = DownLoadBaseUrl + "StandaloneWindows";
 #elif UNITY_ANDROID
     DownLoadUrl = DownLoadBaseUrl + "Android";
 #elif UNITY_IPHONE
@@ -49,12 +47,9 @@ public class DownLoadMgr : BaseManager<DownLoadMgr>
         }
         else
         {
-       
             ABDownLoad.Instance.InitServerVersion(strVersionPath, OnInitVersionCallBack, finishCheck);//将委托传进去
         }
     }
-
-   
 
     /// <summary>
     /// 初始化版本回调
@@ -84,13 +79,12 @@ public class DownLoadMgr : BaseManager<DownLoadMgr>
                 //如果服务器有文件本地不存在，直接下载
                 if (!clientDic.ContainsKey(serverData.FullName))
                 {
-                    Debug.Log("服务器有本地文件没有的文件"+ serverData.FullName);
+                    Debug.Log("服务器有本地文件没有的文件" + serverData.FullName);
                     m_NeedDownLoadDataList.Add(serverData);
                 }
 
                 if (clientDic.ContainsKey(serverData.FullName))
                 {
-                    
                     //同名文件比较MD5 ，不同则更新文件
                     if (serverData.MD5 != clientDic[serverData.FullName])//文件名一致，查找本地版本文件字典的MD5 是否与服务器版本文件的MD5一致
                     {
@@ -98,19 +92,16 @@ public class DownLoadMgr : BaseManager<DownLoadMgr>
                         m_NeedDownLoadDataList.Add(serverData);
                         m_NeedDownLoadDataList.Add(serverData);
                     }
-                    
                 }
-                
             }
         }
         else
         {
             Debug.Log("本地不存在版本文件，全部下载");
-            
+
             for (int i = 0; i < serverDownLoadData.Count; i++)
             {
                 m_NeedDownLoadDataList.Add(serverDownLoadData[i]);
-
             }
         }
         //进行下载
@@ -147,7 +138,7 @@ public class DownLoadMgr : BaseManager<DownLoadMgr>
                 entity.FullName = arrData[0];//名称即路径
                 entity.MD5 = arrData[1];
                 entity.Size = int.Parse(arrData[2]);
-                //Debug.Log(string.Format("解析的路径：{0}\n解析的MD5：{1}\n解析的文件大小KB：{2}", entity.FullName, entity.MD5, entity.Size)); 
+                //Debug.Log(string.Format("解析的路径：{0}\n解析的MD5：{1}\n解析的文件大小KB：{2}", entity.FullName, entity.MD5, entity.Size));
                 //todo 设置一个debug模式，利用条件编译只在 勾选时 编译（可在Android利用插件查看） ，不编译Editor 防止真机无法查看debug
                 list.Add(entity);
             }

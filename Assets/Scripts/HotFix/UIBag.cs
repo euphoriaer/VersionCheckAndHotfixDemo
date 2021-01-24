@@ -15,7 +15,7 @@ class UIBag:BasePanel
     public override void ShowMe(params object[] array)
     {
         base.ShowMe();
-        Debug.Log("打开了背包");
+
        
     }
 
